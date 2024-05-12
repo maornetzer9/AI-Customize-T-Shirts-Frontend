@@ -21,6 +21,7 @@ const Customizer = () => {
     const [ generatingImg, setGeneratingImg ] = useState(false)
     const [ activeEditorTab, setActiveEditorTab ] = useState("")
     const [ activeFilterTab, setActiveFilterTab ] = useState({logoShirt: true, stylishShirt: false});
+    const openAIApi = import.meta.env.VITE_OPENAI_API
 
     // show tab content depending on the activeTab
     const generateTabContent = () => {
@@ -54,7 +55,7 @@ const Customizer = () => {
             const headers = {"Content-Type":'Application/json'}; 
             const body = JSON.stringify({ prompt });
 
-            const response = await fetch('http://localhost:8080/api/v1/dalle', { method, headers, body });
+            const response = await fetch(openAIApi , { method, headers, body });
             const response_result = await response.json();
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
