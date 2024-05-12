@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "serve -s build -l tcp://0.0.0.0:8080"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.105.6",
