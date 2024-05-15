@@ -34,10 +34,8 @@ const Home = () => {
                         className='head-text'
                     > 
                         LET'S 
-                        <br 
-                            className='xl:block hidden'
-                        /> 
-                            DO IT 
+                            <br/>  
+                        DO IT 
                     </h1>
                     </motion.div>
 

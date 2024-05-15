@@ -50,16 +50,16 @@ const Customizer = () => {
 
         try
         {
-            // call our backend to generate an ai image!
+            // call our backend to generate an ai image from OPENAI!
             const method = 'POST'
             const headers = {"Content-Type":'Application/json'}; 
             const body = JSON.stringify({ prompt });
 
             const response = await fetch(openAIApi , { method, headers, body });
             const response_result = await response.json();
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
             const { image } = response_result;
 
             handleDecals(type, `data:image/png;base64,${image}`);
